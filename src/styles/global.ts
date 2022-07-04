@@ -8,10 +8,14 @@ export const globalStyles = globalCss({
     '-webkit-font-smoothing': 'antialiased'
   },
   html: {
-    fontSize: '62.5%',
+    fontSize: '58.5%',
     background: '$gray1',
     color: '$gray12',
-    height: '-webkit-fill-available'
+    height: '-webkit-fill-available',
+
+    '@bp1': {
+      fontSize: '62.5%'
+    }
   },
   'body, button, input, textarea': {
     fontFamily: '$default',
