@@ -1,10 +1,11 @@
 import { useColorTheme } from '@/hooks/useColorTheme'
+import { mainRoutes } from '@/routes/items'
 import { useKBar } from 'kbar'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../Button'
 import { Moon, Sun } from '../icons'
 import CommandLine from '../icons/CommandLine'
-import Tooltip from '../Tooltip'
 import { box, header, root } from './styles'
 
 const Header: React.FC = () => {
@@ -14,42 +15,52 @@ const Header: React.FC = () => {
   return (
     <div className={root()}>
       <div className={header()}>
-        <h2
+        <Link
           className={box({
             css: {
-              mr: '$6'
+              mr: '$6',
+              fontSize: '$5',
+              fontWeight: '600',
+              padding: '1rem',
+              borderRadius: '$2',
+              marginLeft: '-$3',
+
+              color: '$sky11',
+
+              '&:hover': {
+                background: '$sky4'
+              }
             }
           })}
+          to="/"
         >
           JNR
-        </h2>
+        </Link>
 
         <nav>
           <ul>
-            <li>About</li>
-            <li>Projects</li>
-            <li>Contact</li>
+            {mainRoutes?.map((item) => (
+              <li key={item?.id}>
+                <Link to={item.id}>{item?.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
         <div className="actions">
-          <Tooltip text={isDarkTheme ? 'Light mode' : 'Dark mode'}>
-            {isDarkTheme ? (
-              <Button onClick={() => setTheme('light')}>
-                <Sun />
-              </Button>
-            ) : (
-              <Button onClick={() => setTheme('dark')}>
-                <Moon />
-              </Button>
-            )}
-          </Tooltip>
-
-          <Tooltip text="Comandos">
-            <Button onClick={() => query.toggle()}>
-              <CommandLine />
+          {isDarkTheme ? (
+            <Button onClick={() => setTheme('light')}>
+              <Sun />
             </Button>
-          </Tooltip>
+          ) : (
+            <Button onClick={() => setTheme('dark')}>
+              <Moon />
+            </Button>
+          )}
+
+          <Button onClick={() => query.toggle()}>
+            <CommandLine />
+          </Button>
         </div>
       </div>
     </div>

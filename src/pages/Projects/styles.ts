@@ -6,10 +6,9 @@ export const styles = {
     display: 'flex',
     gap: '$3',
     flexDirection: 'column',
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     padding: '$7',
-    height: '100%',
 
     h2: {
       fontSize: '$7',
@@ -17,8 +16,7 @@ export const styles = {
     },
 
     p: {
-      fontSize: '$3',
-      textAlign: 'justify'
+      fontSize: '$3'
     }
   })
 }

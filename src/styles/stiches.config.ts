@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createStitches } from '@stitches/react'
-import { gray, sky } from '@radix-ui/colors'
+import { gray, sky, blackA } from '@radix-ui/colors'
 import type * as Stitches from '@stitches/react'
 
 export const { styled, css, globalCss, createTheme, keyframes } =
@@ -40,7 +40,9 @@ export const { styled, css, globalCss, createTheme, keyframes } =
       },
       colors: {
         ...gray,
-        ...sky
+        ...sky,
+        ...blackA,
+        overlay: '$blackA11'
       }
     },
     media: {

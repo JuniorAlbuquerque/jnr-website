@@ -14,6 +14,17 @@ export const header = css({
   padding: '$7',
   ct: '$w3',
 
+  a: {
+    textDecoration: 'none'
+  },
+
+  nav: {
+    display: 'none',
+    '@bp1': {
+      display: 'initial'
+    }
+  },
+
   ul: {
     display: 'flex',
     gap: '$7',
@@ -22,11 +33,14 @@ export const header = css({
     li: {
       listStyleType: 'none',
       cursor: 'pointer',
-      padding: '1rem 1.6rem',
-      borderRadius: '$2',
 
-      '&:hover': {
-        background: '$gray4'
+      a: {
+        padding: '1rem 1.6rem',
+        borderRadius: '$2',
+        color: 'inherit',
+        '&:hover': {
+          background: '$gray4'
+        }
       }
     }
   },

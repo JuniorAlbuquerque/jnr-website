@@ -10,7 +10,8 @@ export const globalStyles = globalCss({
   html: {
     fontSize: '62.5%',
     background: '$gray1',
-    color: '$gray12'
+    color: '$gray12',
+    height: '-webkit-fill-available'
   },
   'body, button, input, textarea': {
     fontFamily: '$default',
@@ -18,5 +19,15 @@ export const globalStyles = globalCss({
   },
   button: {
     cursor: 'pointer'
+  },
+  'body, #root': {
+    minHeight: '100vh',
+    /* mobile viewport bug fix */
+    'min-height': '-webkit-fill-available',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  '#root': {
+    flex: 1
   }
 })
