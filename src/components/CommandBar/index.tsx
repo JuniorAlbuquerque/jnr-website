@@ -1,37 +1,61 @@
-import { forwardRef, RefObject } from 'react'
-import { ActionImpl, KBarPortal, KBarResults, useMatches } from 'kbar'
+import { forwardRef, RefObject, useEffect } from 'react'
+import { ActionImpl, KBarPortal, KBarResults, useKBar, useMatches } from 'kbar'
 import { Animator, GroupName, Item, Positioner, Search } from './styles'
+import { useLocation } from 'react-router-dom'
 
 type RenderItemProps = {
   item: ActionImpl
   active: boolean
+  activeIndex: number
 }
 
-const RenderItem = forwardRef(({ item, active }: RenderItemProps, ref) => {
-  return (
-    <Item
-      ref={ref as RefObject<HTMLDivElement>}
-      variant={active ? 'active' : undefined}
-    >
-      <div className="label">
-        {item?.icon && item?.icon}
+const RenderItem = forwardRef(
+  ({ item, active, activeIndex }: RenderItemProps, ref) => {
+    const { query } = useKBar()
 
-        {item.name}
-      </div>
+    useEffect(() => {
+      if (activeIndex !== -1) {
+        console.log(activeIndex)
+        query?.setActiveIndex(activeIndex)
 
-      {item?.shortcut && item?.shortcut?.length > 0 && (
-        <div className="shortcuts">
-          {item?.shortcut?.map((shortcut, index) => (
-            <kbd key={index}>{shortcut}</kbd>
-          ))}
+        return
+      }
+
+      query?.setActiveIndex(1)
+    }, [])
+
+    return (
+      <Item
+        ref={ref as RefObject<HTMLDivElement>}
+        variant={active ? 'active' : undefined}
+      >
+        <div className="label">
+          {item?.icon && item?.icon}
+
+          {item.name}
         </div>
-      )}
-    </Item>
-  )
-})
+
+        {item?.shortcut && item?.shortcut?.length > 0 && (
+          <div className="shortcuts">
+            {item?.shortcut?.map((shortcut, index) => (
+              <kbd key={index}>{shortcut}</kbd>
+            ))}
+          </div>
+        )}
+      </Item>
+    )
+  }
+)
 
 function RenderResults() {
   const { results } = useMatches()
+  const location = useLocation()
+
+  const activeIndex = results?.findIndex(
+    (item) =>
+      typeof item !== 'string' &&
+      location?.pathname?.includes(item?.name?.toLowerCase())
+  )
 
   return (
     <KBarResults
@@ -40,7 +64,7 @@ function RenderResults() {
         typeof item === 'string' ? (
           <GroupName>{item}</GroupName>
         ) : (
-          <RenderItem item={item} active={active} />
+          <RenderItem item={item} active={active} activeIndex={activeIndex} />
         )
       }
     />
