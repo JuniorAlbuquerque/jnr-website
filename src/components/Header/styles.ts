@@ -32,16 +32,7 @@ export const header = css({
 
     li: {
       listStyleType: 'none',
-      cursor: 'pointer',
-
-      a: {
-        padding: '1rem 1.6rem',
-        borderRadius: '$2',
-        color: 'inherit',
-        '&:hover': {
-          background: '$gray4'
-        }
-      }
+      cursor: 'pointer'
     }
   },
 

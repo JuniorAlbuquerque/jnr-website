@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Button'
 import { Moon, Sun } from '../icons'
 import CommandLine from '../icons/CommandLine'
+import LinkItem from '../LinkItem'
 import { box, header, root } from './styles'
 
 const Header: React.FC = () => {
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
           <ul>
             {mainRoutes?.map((item) => (
               <li key={item?.id}>
-                <Link to={item.id}>{item?.name}</Link>
+                <LinkItem to={item.id}>{item?.name}</LinkItem>
               </li>
             ))}
           </ul>

@@ -1,3 +1,4 @@
+import AnimatedPage from '@/components/AnimatePage'
 import Layout from '@/components/Layout'
 import About from '@/pages/About'
 import Contact from '@/pages/Contact'
@@ -13,19 +14,35 @@ export const Routes: FunctionComponent = () => {
       children: [
         {
           path: '/',
-          element: <Home />
+          element: (
+            <AnimatedPage variant="center">
+              <Home />
+            </AnimatedPage>
+          )
         },
         {
           path: '/about',
-          element: <About />
+          element: (
+            <AnimatedPage>
+              <About />
+            </AnimatedPage>
+          )
         },
         {
           path: '/projects',
-          element: <Projects />
+          element: (
+            <AnimatedPage>
+              <Projects />
+            </AnimatedPage>
+          )
         },
         {
           path: '/contact',
-          element: <Contact />
+          element: (
+            <AnimatedPage>
+              <Contact />
+            </AnimatedPage>
+          )
         }
       ]
     }
