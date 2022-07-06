@@ -12,6 +12,7 @@ export const Positioner = styled(KBarPositioner, {
   padding: '14vh 16px 16px',
   background: '$blackA8',
   boxSizing: 'border-box',
+  zIndex: 3,
 
   [`.${darkTheme} &`]: {
     background: '$blackA11'
@@ -25,7 +26,7 @@ export const Animator = styled(KBarAnimator, {
   borderRadius: '8px',
   overflow: 'hidden',
   '@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none))': {
-    background: 'rgba(255, 255, 255, 0.35)',
+    background: 'rgba(255, 255, 255, 0.55)',
     WebkitBackdropFilter: 'saturate(300%) blur(25px)',
     backdropFilter: 'saturate(300%) blur(25px)',
 
@@ -43,8 +44,8 @@ export const Search = styled(KBarSearch, {
   outline: 'none',
   border: 'none',
   margin: 0,
-  background: 'rgba(255, 255, 255, 0.08)',
-  color: '$gray12',
+  background: 'rgba(255, 255, 255, 0.05)',
+  color: '$gray11',
 
   [`.${darkTheme} &`]: {
     background: 'rgba(255, 255, 255, 0)'
@@ -68,8 +69,13 @@ export const Item = styled('div', {
   variants: {
     variant: {
       active: {
-        background: '$gray6',
-        color: '$gray12'
+        background: 'rgba(0, 0, 0, 0.15)',
+        color: '$gray12',
+
+        [`.${darkTheme} &`]: {
+          background: '$overlay',
+          color: '$gray12'
+        }
       }
     }
   },

@@ -15,7 +15,6 @@ const RenderItem = forwardRef(
 
     useEffect(() => {
       if (activeIndex !== -1) {
-        console.log(activeIndex)
         query?.setActiveIndex(activeIndex)
 
         return
