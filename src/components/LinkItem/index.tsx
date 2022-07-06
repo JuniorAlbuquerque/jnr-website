@@ -41,6 +41,12 @@ const LinkItem: FC<LinkItemProps> = ({ children, to }) => {
       animate="rest"
       variant={isMatch ? 'active' : undefined}
       onClick={() => navigate(to)}
+      tabIndex={0}
+      onKeyPress={(event) => {
+        if (event.key === 'Enter') {
+          navigate(to)
+        }
+      }}
     >
       <motion.div variants={textMotion}>{children}</motion.div>
     </NavLinkContainer>

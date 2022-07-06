@@ -23,6 +23,10 @@ export function useColorTheme() {
     html.classList.remove(darkTheme.className)
   }, [])
 
+  const toggleTheme = useCallback(() => {
+    setDarkTheme((prevState) => !prevState)
+  }, [])
+
   useEffect(() => {
     if (isDarkTheme) {
       setTheme('dark')
@@ -33,6 +37,7 @@ export function useColorTheme() {
 
   return {
     isDarkTheme,
+    toggleTheme,
     setTheme
   }
 }

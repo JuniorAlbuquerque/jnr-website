@@ -5,7 +5,27 @@ export const globalStyles = globalCss({
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
-    '-webkit-font-smoothing': 'antialiased'
+    '-webkit-font-smoothing': 'antialiased',
+
+    '::-webkit-scrollbar': {
+      width: 10
+    },
+
+    /* Track */
+    '::-webkit-scrollbar-track': {
+      background: '$gray5'
+    },
+
+    /* Handle */
+    '::-webkit-scrollbar-thumb': {
+      background: '$gray9',
+      borderRadius: '$2'
+    },
+
+    /* Handle on hover */
+    '::-webkit-scrollbar-thumb:hover': {
+      background: '$gray10'
+    }
   },
   html: {
     fontSize: '58.5%',
