@@ -1,28 +1,35 @@
 import { styled } from '@/styles/stiches.config'
+import { darkTheme } from '@/styles/themes'
 import { motion } from 'framer-motion'
 
 export const NavLinkContainer = styled(motion.div, {
   padding: '1rem 1.6rem',
   borderRadius: '$2',
-  '&:hover': {
-    background: '$sky4'
-  },
 
-  a: {
-    color: 'inherit'
+  color: '$gray11',
+
+  '&:hover': {
+    background: '$sky5',
+    color: '$sky11'
   },
 
   variants: {
     variant: {
       active: {
-        backgroundColor: '$sky4',
-
-        a: {
-          color: '$sky11'
-        },
+        backgroundColor: '$sky5',
+        color: '$sky11',
 
         '&:hover': {
-          background: '$sky5'
+          background: '$sky6'
+        },
+
+        [`.${darkTheme} &`]: {
+          backgroundColor: '$sky4',
+          color: '$sky11',
+
+          '&:hover': {
+            background: '$sky7'
+          }
         }
       }
     }

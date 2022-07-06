@@ -21,7 +21,9 @@ export const { styled, css, globalCss, createTheme, keyframes } =
       radii: {
         1: '0.4rem',
         2: '0.8rem',
-        3: '1.2rem'
+        3: '1.2rem',
+        4: '1.6rem',
+        5: '2rem'
       },
       space: {
         1: '0.4rem',
@@ -30,7 +32,9 @@ export const { styled, css, globalCss, createTheme, keyframes } =
         4: '1.4rem',
         5: '1.8rem',
         6: '2rem',
-        7: '2.4rem'
+        7: '2.4rem',
+        8: '3rem',
+        9: '3.4rem'
       },
       sizes: {
         w1: '80rem',
