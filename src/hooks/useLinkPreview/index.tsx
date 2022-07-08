@@ -38,8 +38,6 @@ export function useLinkPreview(url: string) {
         url: ''
       } as PreviewLink
     )
-
-    console.log(previewData)
     setPreviewLinkData(previewData)
   }
 
