@@ -3,7 +3,7 @@ import { load } from 'cheerio'
 import { useCallback, useEffect, useState } from 'react'
 import { MetaTagasEnum, MetaTags, PreviewLink } from './types'
 
-const proxyUrl = 'https://thingproxy.freeboard.io/fetch'
+const proxyUrl = 'https://cors-anywhere.herokuapp.com'
 
 export function useLinkPreview(url: string) {
   const [previewLinkData, setPreviewLinkData] = useState<PreviewLink>(null)
