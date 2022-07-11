@@ -39,15 +39,15 @@ export function useActions() {
       icon: <IconDashboard />,
       perform: () => navigate('projects')
     },
-    // {
-    //   id: 'contact',
-    //   name: 'Contact',
-    //   shortcut: ['n', 'c'],
-    //   keywords: 'contacts',
-    //   section: 'Navigation',
-    //   icon: <IconMail />,
-    //   perform: () => navigate('contact')
-    // },
+    {
+      id: 'contact',
+      name: 'Contact',
+      shortcut: ['n', 'c'],
+      keywords: 'contacts',
+      section: 'Navigation',
+      icon: <IconMail />,
+      perform: () => navigate('contact')
+    },
     {
       id: 'source',
       name: 'View Source',

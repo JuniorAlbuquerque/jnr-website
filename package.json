@@ -23,6 +23,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
+    "react-toastify": "^9.0.5",
     "usehooks-ts": "^2.6.0"
   },
   "devDependencies": {

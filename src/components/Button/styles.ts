@@ -38,6 +38,13 @@ export const Container = styled('button', {
             background: '$sky7'
           }
         }
+      },
+      secondary: {
+        background: '$tealA9',
+
+        '&:hover': {
+          background: '$tealA8'
+        }
       }
     }
   }

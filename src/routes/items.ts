@@ -6,9 +6,9 @@ export const mainRoutes = [
   {
     id: 'projects',
     name: 'Projects'
+  },
+  {
+    id: 'contact',
+    name: 'Contact'
   }
-  // {
-  //   id: 'contact',
-  //   name: 'Contact'
-  // }
 ]

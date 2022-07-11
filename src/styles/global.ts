@@ -49,7 +49,11 @@ export const globalStyles = globalCss({
     /* mobile viewport bug fix */
     'min-height': '-webkit-fill-available',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+
+    '.toast-content': {
+      fontFamily: 'Be Vietnam Pro, sans-serif'
+    }
   },
   '#root': {
     flex: 1
