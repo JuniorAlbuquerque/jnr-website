@@ -1,5 +1,5 @@
-import { useLinkPreview } from '@/hooks/useLinkPreview'
-import { FC, Fragment } from 'react'
+import axios from 'axios'
+import { FC, Fragment, useEffect, useState } from 'react'
 import IconLink from '../icons/Link'
 import Shimmer from '../Shimmer'
 import { styles } from './styles'
@@ -9,6 +9,13 @@ type LinkPreviewProps = {
   imgSrc?: string
   description?: string
   showLoading?: boolean
+}
+
+type PreviewLink = {
+  description: string
+  title: string
+  image: string
+  url: string
 }
 
 const Skeleton = () => (
@@ -29,9 +36,23 @@ const LinkPreview: FC<LinkPreviewProps> = ({
   description,
   showLoading
 }) => {
-  const { previewLinkData, isLoading } = useLinkPreview(url)
+  const [previewLinkData, setPreviewData] = useState<PreviewLink>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const img = imgSrc ? imgSrc : previewLinkData?.image
+
+  const scrap = async () => {
+    setIsLoading(true)
+    const { data } = await axios.get(
+      `https://link-preview-ts.vercel.app/api/v1/scrap?url=${url}`
+    )
+    setIsLoading(false)
+    setPreviewData(data)
+  }
+
+  useEffect(() => {
+    scrap()
+  }, [])
 
   return (
     <div className={styles.root()}>
