@@ -3,6 +3,7 @@ import { FC, Fragment, useEffect, useState } from 'react'
 import IconLink from '../icons/Link'
 import Shimmer from '../Shimmer'
 import { styles } from './styles'
+import { getLinkData } from 'link-preview-tags'
 
 type LinkPreviewProps = {
   url: string
@@ -43,9 +44,10 @@ const LinkPreview: FC<LinkPreviewProps> = ({
 
   const scrap = async () => {
     setIsLoading(true)
-    const { data } = await axios.get(
-      `https://link-preview-ts.vercel.app/api/v1/scrap?url=${url}`
-    )
+    const data = await getLinkData(url)
+    // const { data } = await axios.get(
+    //   `https://link-preview-ts.vercel.app/api/v1/scrap?url=${url}`
+    // )
     setIsLoading(false)
     setPreviewData(data)
   }
