@@ -78,6 +78,33 @@ const Projects: React.FC = () => {
 
         <div className={styles.card()}>
           <LinkPreview
+            title="RST-IoT"
+            url="https://riot-frontend.vercel.app/"
+            imgSrc="https://riot-frontend.vercel.app/static/media/check-bg.413c5571.png"
+            description="Uma Ferramenta de Apoio a Especificação de Requisitos de Sistemas de Software IoT"
+          />
+
+          <div className="card-description">
+            <p>Especificação de Requisitos de Sistemas de Software IoT</p>
+
+            <span>[ReactJS, Node, Postgres]</span>
+          </div>
+
+          <div className="card-icons">
+            <a
+              href="https://github.com/JuniorAlbuquerque/riot-frontend"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button>
+                <IconGithub />
+              </Button>
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.card()}>
+          <LinkPreview
             url="https://jnrgod1.gitlab.io/color-huh"
             imgSrc="https://gitlab.com/jnrgod1/color-huh/-/raw/master/img/screens/white.png"
             description="Gerador randomico de cores :D"
@@ -90,7 +117,11 @@ const Projects: React.FC = () => {
           </div>
 
           <div className="card-icons">
-            <a href="ss">
+            <a
+              href="https://gitlab.com/jnrgod1/color-huh"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Button>
                 <IconGithub />
               </Button>

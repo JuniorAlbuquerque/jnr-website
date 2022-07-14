@@ -22,6 +22,8 @@ export const TextAreaContent = styled('textarea', {
   padding: '$4',
   borderRadius: '$3',
 
+  resize: 'vertical',
+
   color: '$gray12',
   outline: 'none',
   border: '1px solid $gray4',

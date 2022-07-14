@@ -6,6 +6,7 @@ import { styles } from './styles'
 
 type LinkPreviewProps = {
   url: string
+  title?: string
   imgSrc?: string
   description?: string
   showLoading?: boolean
@@ -32,6 +33,7 @@ const Skeleton = () => (
 
 const LinkPreview: FC<LinkPreviewProps> = ({
   url,
+  title,
   imgSrc,
   description,
   showLoading
@@ -65,7 +67,7 @@ const LinkPreview: FC<LinkPreviewProps> = ({
           </div>
 
           <div className={styles.previewContent()}>
-            <p className="title">{previewLinkData?.title}</p>
+            <p className="title">{title ?? previewLinkData?.title}</p>
             <p className="description">
               {previewLinkData?.description
                 ? previewLinkData?.description
@@ -74,7 +76,9 @@ const LinkPreview: FC<LinkPreviewProps> = ({
 
             <div className="url">
               <IconLink />
-              <a href={previewLinkData?.url}>{previewLinkData?.url}</a>
+              <a href={url ?? previewLinkData?.url}>
+                {url ?? previewLinkData?.url}
+              </a>
             </div>
           </div>
         </Fragment>
