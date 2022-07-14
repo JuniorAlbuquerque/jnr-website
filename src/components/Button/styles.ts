@@ -40,10 +40,11 @@ export const Container = styled('button', {
         }
       },
       secondary: {
-        background: '$tealA9',
+        background: '$gray11',
+        color: '$gray1',
 
         '&:hover': {
-          background: '$tealA8'
+          background: '$gray12'
         }
       }
     }

@@ -9,7 +9,7 @@ const Home: React.FC = () => {
 
   return (
     <div className={styles.content()}>
-      <h2>Hi, I'm Junior 👋</h2>
+      <h2>Hi, I'm Ednilson Jr 👋</h2>
 
       <p>
         Engenheiro de Software pela Universidade Federal do Amazonas, nascido em
@@ -18,8 +18,7 @@ const Home: React.FC = () => {
       </p>
 
       <p>
-        Atualmente atuando como Desenvolvedor Frontend Sr, com foco em React e
-        Typescript.
+        Atualmente, Desenvolvedor Frontend Sr, com foco em React e Typescript.
       </p>
 
       <p>Quer conhecer mais sobre meu trabalho?</p>
